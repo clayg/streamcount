@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package streamcount;
+
+// The greeting service definition.
+service StreamCounter {
+  // Send users and count unique names
+  rpc Count (stream CountRequest) returns (CountReply) {}
+}
+
+// The request message containing the user's name
+message CountRequest {
+  string user = 1;
+}
+
+// A response message containing the user count
+message CountReply {
+  uint32 count = 1;
+}
+
