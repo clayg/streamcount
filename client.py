@@ -38,5 +38,8 @@ async def run() -> None:
 
 
 if __name__ == '__main__':
-    logging.basicConfig()
-    asyncio.run(run())
+    logging.basicConfig(level=logging.DEBUG)
+    try:
+        asyncio.run(run())
+    finally:
+        print('done')
