@@ -30,8 +30,6 @@ async def run() -> None:
         try:
             response = await req
         except grpc.aio.AioRpcError as e:
-            # uncomment this to suppress the task error
-            # req._async_request_poller.cancel()
             print('error', e.details())
         else:
             print('success', response.count == len(set(USERS)))
